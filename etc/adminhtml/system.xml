@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="dynamic_frontname" sortOrder="100">
+            <label>Dynamic Front Name</label>
+        </tab>
+        <section id="dynamic_frontname" type="text" translate="label" showInStore="1" showInWebsite="1" showInDefault="1" sortOrder="1">
+            <tab>dynamic_frontname</tab>
+            <label>Dynamic Front Name</label>
+            <resource>Alaa_DynamicFrontName::frontname</resource>
+            <group id="settings" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" type="text">
+                <field id="enabled" type="select" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" sortOrder="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sender_email" translate="label" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0" type="text">
+                    <label>Sender Email</label>
+                    <comment>If not set, the admin will be the sender</comment>
+                </field>
+                <field id="length" translate="label" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0" type="text">
+                    <label>Front Name Length</label>
+                    <comment>The default value will be 8 characters if left empty</comment>
+                </field>
+                <field id="cron_expr" type="text" showInDefault="1" showInWebsite="0" showInStore="0" translate="label" sortOrder="4">
+                    <label>Cron Expression</label>
+                    <comment><![CDATA[For example: <strong>0 0 * * 0</strong> every week on Sunday]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
